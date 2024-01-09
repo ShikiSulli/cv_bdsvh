@@ -499,3 +499,83 @@ nav{
         }
     }
 }
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height : 80vh;
+
+    .skills__categories {
+        margin-bottom: 20px;
+
+        .skills__categories__list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .skills__categories__list__item {
+                margin: 5px;
+
+                button {
+                    padding: 10px 15px;
+                    background-color: var(--color2);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: var(--color3);
+                    }
+                }
+            }
+        }
+    }
+
+    .skills__languages {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .skills__languages__card {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); // 4 colonnes
+            gap: 20px;
+
+            .skills__languages__card__item {
+                background-color: var(--color5); // Couleur de fond de la carte
+                border: 2px solid var(--color2); // Bordure élégante
+                border-radius: 10px; // Coins arrondis
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre subtile
+                padding: 20px;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px); // Effet de survol léger
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                }
+                .langage-icon {
+                    max-width: 80px; // Taille de l'image
+                    height: auto;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    color: var(--color1);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .skills__languages .skills__languages__card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
