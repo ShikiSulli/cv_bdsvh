@@ -13,21 +13,13 @@ export default function Home() {
         "Formation pour obtenir le titre professionnel de Concepteur Développeur d’Application.",
       cardDetailedText:
         "Poursuite de formation en développement d'applications, avec un accent sur les compétences pratiques et théoriques nécessaires dans le domaine de la technologie.",
-    },
+      },
     {
       title: "2016 - Aujourd'hui",
       cardTitle: "Agent Escale Ferroviaire SNCF",
       cardSubtitle: "SNCF PARIS SAINT-LAZARE",
       cardDetailedText:
         "Accueil et assistance aux usagers des transports en commun, vente de produits adaptés à leurs voyages.",
-      
-    },
-    {
-      title: "2014 - 2016",
-      cardTitle: "Agent de Médiation d'information et de services",
-      cardSubtitle: "PROMEVIL",
-      cardDetailedText:
-        "Établissement et rétablissement de contact entre les personnes et les structures, analyse et gestion de conflits.",
       
     },
     {
@@ -39,6 +31,14 @@ export default function Home() {
       
     },
     {
+      title: "2014 - 2016",
+      cardTitle: "Agent de Médiation d'information et de services",
+      cardSubtitle: "PROMEVIL",
+      cardDetailedText:
+        "Établissement et rétablissement de contact entre les personnes et les structures, analyse et gestion de conflits.",
+      
+    },
+    {
       title: "2013-2014",
       cardTitle: "Niveau Licence Mathématique/Physique/Informatique",
       cardSubtitle: "IUT Cergy-Pontoise",
@@ -46,6 +46,13 @@ export default function Home() {
         "Études universitaires en mathématiques, physique et informatique.",
       
     },
+    {
+      title: "2012-2013",
+      cardTitle: "Baccalauréat Sciente technique de l'industrie et du développement durable option : innovation technologique et éco-conception",
+      cardSubtitle: "Lycée Gustave Monod",
+      cardDetailedText:
+        "Obtention du baccalauréat STI2D option ITEC.",
+    }
   ];
 
   return (
@@ -145,19 +152,26 @@ export default function Home() {
         <div className="timeline__content--title">
           <h2 className="timeline__title">Mon parcours</h2>
           </div>
-        <Chrono items={items} theme={{
+        <Chrono items={items} 
+        theme={{
             primary: '#F2E4F9',
-            secondary: '#839CB5',
+            secondary: '#484848',
             cardBgColor: '#F2E4F9',
-            titleColor: '#B1E1E9',
+            titleColor: '#484848',
+            cardTitleColor: '#F2E4F9',
+            cardSubtitleColor: '#B1E1E9',
             titleColorActive: '#F2E4F9',
         }} 
         fontSizes={{
             title: '1.8rem',
             cardTitle: '1.5rem',
             cardSubtitle: '0.8rem',
+            cardDetailedText: '1rem',
             body: '0.7rem',
         }}
+        cardHeight={150}
+        cardWidth={425}
+        
         mode="VERTICAL_ALTERNATING" />
       </div>
     </div>

@@ -4,6 +4,7 @@
     --color3 :#96D7EB;
     --color4 :#B1E1E9;
     --color5 :#F2E4F9;
+    
 }
 * , ::after , ::before{
     box-sizing: border-box;
@@ -332,58 +333,169 @@ nav{
 
 }
 
-.timeline {
-    .timeline--content--title {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+.footer
+{
+   position: sticky;
+   bottom: 0;
+   display: flex;
+    justify-content: space-between;
+    background-color: #484848;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
 
-    .timeline__title {
-        font-size: 2rem;
-        font-weight: 700;
-    }
+   }
 
-    .timeline--content {
-        position: relative;
-        padding-left: 40px;
 
-        .timeline__line {
-          position: absolute;
-          transform: translate(-50%);
-          width: 10px;
-          -webkit-transform: translate(-50%);
-          -moz-transform: translate(-50%);
-          -ms-transform: translate(-50%);
-          -o-transform: translate(-50%);
-          height: 100%;
+.reserved
+{
+    background-color: #484848;
+    color: #fff;
+    text-align:end;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 20px;
+    
 }
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 1rem;
+    background-color: var(--color5);
+    height: 80vh;
+    img{
+        width: 18rem;
+        height: 20rem;
+    }
+    
 
-        .timeline--item {
-            position: relative;
+    .contact__location {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        margin-right: 20px;
+        gap: 1rem;
+        height : 100%;
+       
+        iframe {
+            width: 80%;
+            height: 19rem;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .contact__location--title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color1);
+            margin-top: 20px;
+        }
+
+        .contact__location--info {
+            p {
+                font-weight: 700;
+                color: var(--color2);
+                margin: 5px 0;
+
+            }
+        }
+    }
+
+    .contact__form {
+        flex: 1;
+        max-width: 600px;
+        background-color: var(--color4);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        .contact__form--title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color1);
             margin-bottom: 20px;
+        }
+        .contact__form--name,
+        .contact__form--email,
+        .contact__form--message {
+            margin-bottom: 15px;
 
-            .timeline--dot {
-                position: absolute;
-                left: 0;
-                width: 30px;
-                height: 30px;
-                background-color: #96D7EB; // Couleur des dots
-                border-radius: 50%;
-                top: 5px;
-                transform: translateX(-50%);
-            }
-
-            .timeline--date {
-                font-weight: bold;
+            label {
+                display: block;
+                font-weight: 700;
                 margin-bottom: 5px;
+                color: var(--color1);
             }
 
-            .timeline--content {
-                padding-left: 45px;
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid var(--color2);
+                outline: none;
+
+                &:focus {
+                    border-color: var(--color3);
+                }
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+        }
+
+        .contact__form--button {
+            text-align: center;
+
+            button {
+                padding: 10px 20px;
+                background-color: var(--color2);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: var(--color3);
+                }
             }
         }
     }
 }
+.meeting
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  
+    img{
+        width: 25vw;
+        height: 30vh;
+    }
+   
+}
 
 
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
 
+        .contact__location,
+        .contact__form {
+            margin-right: 0;
+            max-width: 100%;
+        }
+    }
+}
