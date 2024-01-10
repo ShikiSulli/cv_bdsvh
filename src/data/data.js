@@ -35,3 +35,23 @@ export  function getLanguage(){
     return languages;
 }
 
+export function getProjects(){
+    const projects = [
+        {id :1, name : 'Morgoth Code Forge', url :'wordpress.png', languagesId : [13], desc:'Site vitrine Wordpress avec une charté graphique sur mesure',github : '#'},
+        {id :2, name : 'Pokedex_api', url :'pokedex_api.png', languagesId : [5], desc:'Site Web qui permet de rechercher des pokemons et d\'afficher leurs caractéristiques',github : 'https://github.com/ShikiSulli/pokedex'},
+        {id :3, name : 'site Vitrine en Html/Css', url : 'htmlTP.png', languagesId : [1,2], desc:'Site vitrine en Html/Css',github : 'https://github.com/ShikiSulli/site_vitrine'},
+        {id :4, name : 'Blogxpress', url : 'blogxpress.png', languagesId : [7,11,12], desc:'Blog avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/blogxpress'},
+        {id :5, name : 'Cities-api', url :'Cities-api.png', languagesId : [11,7], desc:'création d\'une base de données Mysql en PHP qui permet de rechercher des villes',github : 'https://github.com/ShikiSulli/Cities-api'},
+        {id :6, name : 'Codeexpress', url :'codexpress.png', languagesId : [11,12,7], desc:'Site qui permet d\'archiver des bouts de code avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/codexpress'},
+        {id :7, name : 'Biblioapp', url :'Biblioapp.png', languagesId : [11,12,7], desc:'Site gestionnaire de bibliothèque avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/biblioapp'},
+        {id :8, name : 'Company-api', url :'company-api-sqli.png', languagesId : [11,7], desc:'création d\' une base de données en Sqli qui permet de rechercher des entreprises',github : 'https://github.com/ShikiSulli/company-api'},
+        {id :9, name :'Facture-app', url :'factures_js.png', languagesId : [3], desc:'App qui permet de créer des factures et de les exporter en PDF en Javascript',github : 'https://github.com/ShikiSulli/PROJET_FACTURES'},
+        {id :10, name : 'Gestionnaire de Movies/Users', url : 'movie_js.png', languagesId : [3], desc:'App qui permet de gérer des films et des utilisateurs en Javascript',github : 'https://github.com/ShikiSulli/MOVIES'},
+        {id :11, name :'Kasa', url :'kasa_react.png', languagesId : [4,5,6], desc:'Site de location de logement avec un back-end en NodeJS, base de donnée MongoDB et un front-end en ReactJS',github : 'https://github.com/ShikiSulli/kasa'},
+        {id :12, name:'NoteXpress', url: 'NoteXpress.png', languagesId : [11,12,7], desc:'Site  de partage de note ,login/register avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/NoteXpress'},
+        {id :13, name:'Flag-api', url: 'react_flag.png', languagesId : [4,5,6], desc:'Site qui permet de rechercher des pays et d\'afficher leurs caractéristiques',github : 'https://github.com/ShikiSulli/tp-react-flag'},
+        {id :14, name:"RoomValley", url: 'RoomValley.png', languagesId : [11,12,7,3,1,2], desc:'Site de location de salle de réunion avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/RoomValley'},
+        {id :15, name: 'Site vitrine JS', url : 'Site_vitrine_js.png', languagesId : [3,1,2],desc:'Site vitrine en Javascript' ,github :'https://github.com/ShikiSulli/site_vitrine_js'},
+    ];
+    return projects;
+}

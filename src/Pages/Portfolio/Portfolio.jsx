@@ -1,9 +1,61 @@
 import '../../style/style.scss';
+import { useState, useEffect } from 'react';
+import { getLanguage, getProjects } from '../../data/data';
 
 export default function Portfolio() {
+    const [selectedLanguage, setSelectedLanguage] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredProjects, setFilteredProjects] = useState([]);
+
+    // Récupérer les langages et les projets
+    const languages = getLanguage();
+    const projects = getProjects();
+
+    useEffect(() => {
+        let filtered = projects;
+
+        // Filtrer par langage sélectionné
+        if (selectedLanguage) {
+            filtered = filtered.filter(project => project.languagesId.includes(selectedLanguage));
+        }
+
+        // Filtrer par terme de recherche
+        if (searchTerm) {
+            filtered = filtered.filter(project => 
+                project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                languages.filter(lang => project.languagesId.includes(lang.id) && lang.name.toLowerCase().includes(searchTerm.toLowerCase())).length > 0
+            );
+        }
+
+        setFilteredProjects(filtered);
+    }, [selectedLanguage, searchTerm]);
+
     return (
         <div className="portfolio">
-        <h1>Portfolio</h1>
+            <div className="search-bar">
+                <input 
+                    type="text" 
+                    placeholder="Rechercher par nom ou langage..." 
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
+            <div className="language-buttons">
+                {languages.map(language => (
+                    <button key={language.id} onClick={() => setSelectedLanguage(language.id)}>
+                        {language.name}
+                    </button>
+                ))}
+            </div>
+            <div className="project-cards">
+                {filteredProjects.map(project => (
+                    <div key={project.id} className="project-card">
+                        <img src={'../' + project.url} alt={project.name} />
+                        <h3>{project.name}</h3>
+                        <p>{project.desc}</p>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                ))}
+            </div>
         </div>
     );
-    }
+}

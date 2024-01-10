@@ -579,3 +579,80 @@ nav{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+.portfolio {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .language-buttons {
+        display: flex;
+        justify-content: center;
+
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        button {
+            background-color: var(--color2);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: var(--color3);
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px var(--color4);
+            }
+        }
+    }
+
+    .project-cards {
+        display: grid;
+        width: 80%;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 2rem;
+
+        .project-card {
+            background-color: var(--color5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            grid-column: span 4; // Chaque carte prendra 4 colonnes, donc 3 cartes par rangée
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+
+            h3 {
+                color: var(--color1);
+                margin-top: 15px;
+            }
+
+            p {
+                color: var(--color1);
+                font-size: 0.9em;
+            }
+
+            a {
+                display: inline-block;
+                margin-top: 10px;
+                color: var(--color2);
+                text-decoration: none;
+                font-weight: bold;
+
+                &:hover {
+                    color: var(--color3);
+                }
+            }
+        }
+    }
+}
