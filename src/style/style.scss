@@ -580,15 +580,31 @@ nav{
     }
 }
 .portfolio {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+    padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    .search-bar {
+        margin-bottom: 20px;
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--color2);
+            border-radius: 5px;
+            font-size: 1em;
+
+            &:focus {
+                outline: none;
+                border-color: var(--color3);
+            }
+        }
+    }
+
     .language-buttons {
         display: flex;
-        justify-content: center;
-
+       
         flex-wrap: wrap;
         margin-bottom: 20px;
 
@@ -596,14 +612,15 @@ nav{
             background-color: var(--color2);
             color: white;
             border: none;
+            border-radius: 5px;
             padding: 10px 15px;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            margin: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
 
             &:hover {
                 background-color: var(--color3);
+                transform: translateY(-2px);
             }
 
             &:focus {
@@ -615,42 +632,52 @@ nav{
 
     .project-cards {
         display: grid;
-        width: 80%;
+        width :80%;
         grid-template-columns: repeat(12, 1fr);
-        grid-gap: 2rem;
+        grid-gap: 20px;
 
         .project-card {
+            width:80%;
+            grid-column: span 4;
             background-color: var(--color5);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            grid-column: span 4; // Chaque carte prendra 4 colonnes, donc 3 cartes par rangée
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
 
             img {
                 width: 100%;
                 height: auto;
                 border-radius: 5px;
+                margin-bottom: 15px;
             }
 
             h3 {
                 color: var(--color1);
-                margin-top: 15px;
+                margin-bottom: 10px;
             }
 
             p {
                 color: var(--color1);
                 font-size: 0.9em;
+                margin-bottom: 15px;
             }
 
             a {
-                display: inline-block;
-                margin-top: 10px;
                 color: var(--color2);
                 text-decoration: none;
                 font-weight: bold;
 
                 &:hover {
                     color: var(--color3);
+                }
+
+                .fa-brands {
+                    margin-right: 5px;
                 }
             }
         }
