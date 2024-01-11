@@ -594,29 +594,19 @@ nav{
        
 
         .skills_title {
+            border: 2px solid var(--color2);
+            background-color: var(--color6);
+            border-radius: 10px;
+            padding: 1rem;
             font-size: 2rem;
             margin-bottom: 20px;
             color: var(--color2);
             position: relative;
-            &::before, &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                width: 20px; // Largeur de la bulle
-                height: 20px; // Hauteur de la bulle
-                background-color: var(--color2); // Couleur de la bulle
-                border-radius: 50%; // Rend la bulle ronde
-                transform: translate(-50%, -50%);
-            }
-
-            &::before {
-                left: -30px; // Position de la première bulle
-            }
-
-            &::after {
-                left: calc(100% + 10px); // Position de la seconde bulle
-            }
-        }
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+}
 
         .soft__skills__card, .hobbies__card {
             display: grid;
