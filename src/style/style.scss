@@ -506,6 +506,12 @@ nav{
     align-items: center;
     padding: 20px;
     height: auto;
+    .skills_title{
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--color1);
+        margin-bottom: 20px;
+    }
 
     &__categories {
         margin-bottom: 20px;
