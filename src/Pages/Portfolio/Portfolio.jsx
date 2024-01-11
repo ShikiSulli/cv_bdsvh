@@ -1,6 +1,7 @@
 import '../../style/style.scss';
 import { useState, useEffect } from 'react';
 import { getLanguage, getProjects } from '../../data/data';
+import { Link } from 'react-router-dom';
 
 export default function Portfolio() {
     const [selectedLanguage, setSelectedLanguage] = useState(null);
@@ -32,6 +33,7 @@ export default function Portfolio() {
 
     return (
         <div className="portfolio">
+            <div className='portfolio__head'>
             <div className="search-bar">
                 <input 
                     type="text" 
@@ -40,11 +42,13 @@ export default function Portfolio() {
                 />
             </div>
             <div className="language-buttons">
+                <button onClick={() => setSelectedLanguage(null)}>Tous</button>
                 {languages.map(language => (
                     <button key={language.id} onClick={() => setSelectedLanguage(language.id)}>
                         {language.name}
                     </button>
                 ))}
+            </div>
             </div>
             <div className="project-cards">
                 {filteredProjects.map(project => (
@@ -52,10 +56,13 @@ export default function Portfolio() {
                         <img src={'../' + project.url} alt={project.name} />
                         <h3>{project.name}</h3>
                         <p>{project.desc}</p>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                        <a className='github-link' href={project.github} target="_blank" rel="noopener noreferrer">
+                            <i className="fa-brands fa-github"></i> Voir sur GitHub
+                        </a>
                     </div>
                 ))}
             </div>
+
         </div>
     );
 }

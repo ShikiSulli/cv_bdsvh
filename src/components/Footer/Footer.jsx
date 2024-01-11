@@ -4,6 +4,7 @@ import Logo from '../../Logo/Logo.png';
 
 export default function Footer() {
     return (
+        <div className="footer_container">
         <footer className='footer'>
            
         <div className="footer__logo">
@@ -13,5 +14,6 @@ export default function Footer() {
             <p>©BdsvhB 2024 - Tous droits réservés</p>
         </div>
         </footer>
+        </div>
     );
     }

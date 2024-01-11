@@ -6,7 +6,6 @@ export  function getCategories(){
         { id: 2, name: 'Back-end' },
         { id: 3, name: 'UI/UX' },
         { id: 5, name: 'Database' },
-        { id: 6, name: 'in progress'},
         { id: 7, name: 'CMS'}
 
     ];
@@ -19,7 +18,7 @@ export  function getLanguage(){
         { id: 2, name: 'CSS', url:`css.png` , categoryId: 1 },
         { id: 3, name: 'JavaScript', url:`Js.png` , categoryId: 1 },
         { id: 4, name: 'NodeJS', url:`node.png` , categoryId: 2 },
-        { id: 5, name: 'ReactJS', url:`react.png` , categoryId: 2 },
+        { id: 5, name: 'ReactJS', url:`react.png` , categoryId: 1 },
         { id: 6, name: 'MongoDB', url:`mongodb.png` , categoryId: 5 },
         { id: 7, name: 'MySQL', url:`Sql.png` , categoryId: 5 },
         { id: 8, name: 'PostgreSQL', url:`postgres.png` , categoryId: 5 },
@@ -28,9 +27,6 @@ export  function getLanguage(){
         {id: 11, name:'PHP', url:`PHP.png` , categoryId: 2},
         {id: 12, name:'Symfony', url:`Symfony.png` , categoryId: 2},
         {id: 13, name:'Wordpress', url:`Wordpress.png` , categoryId: 7},
-        {id: 14, name:'Java', url:`java.png` , categoryId: 6},
-        {id: 15, name:'Typescript', url:`Ts.png` , categoryId: 6}
-
     ];
     return languages;
 }
@@ -54,4 +50,33 @@ export function getProjects(){
         {id :15, name: 'Site vitrine JS', url : 'Site_vitrine_js.png', languagesId : [3,1,2],desc:'Site vitrine en Javascript' ,github :'https://github.com/ShikiSulli/site_vitrine_js'},
     ];
     return projects;
+}
+
+export function getHobbies() {
+    const hobbies = [
+        {id :1, name : 'Gaming', url :'gaming.png', desc:'Jeux vidéo'},
+        {id :2, name : 'Manga', url :'manga.png', desc:'Manga'},
+        {id :3, name : 'Musique', url :'musique.png', desc:'Musique'},
+        {id :4, name : 'Basketball', url :'basketball.png', desc:'Sport'},
+        {id :5, name : 'Cuisine', url :'cuisine.png', desc:'Cuisine'},
+        {id :6, name : 'Cinéma', url :'cinema.png', desc:'Cinéma'},
+        {id :7, name : 'Formule 1', url :'f1.png', desc:'Formule 1'}
+    ];
+    return hobbies;
+}
+
+
+export function getSoftSkills() {
+    const softSkills = [
+        {id :1, name : 'Autonome', url :'autonome.png'},
+        {id :2, name : 'Curieux', url :'curieux.png'},
+        {id :3, name : 'Organisé', url :'organise.png'},
+        {id :4, name : 'Accueillir la clientèle', url :'accueil.png'},
+        {id :5, name : 'Travail d\'équipe', url :'travail_equipe.png'},
+        {id :6, name : 'Adaptabilité', url :'adaptabilite.png'},
+        {id :7, name : 'Analyse', url :'analyse.png'},
+        {id :8, name : 'Observation', url :'observation.png'},
+        {id :9, name : 'Ecoute active', url :'ecoute.png'},
+    ];
+    return softSkills;
 }

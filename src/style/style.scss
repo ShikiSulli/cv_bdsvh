@@ -333,6 +333,7 @@ nav{
 
 }
 
+
 .footer
 {
    position: sticky;
@@ -504,11 +505,10 @@ nav{
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    height : 80vh;
+    height: auto;
 
-    .skills__categories {
+    &__categories {
         margin-bottom: 20px;
-
         .skills__categories__list {
             list-style: none;
             padding: 0;
@@ -518,7 +518,6 @@ nav{
 
             .skills__categories__list__item {
                 margin: 5px;
-
                 button {
                     padding: 10px 15px;
                     background-color: var(--color2);
@@ -527,7 +526,6 @@ nav{
                     border-radius: 5px;
                     cursor: pointer;
                     transition: background-color 0.3s ease;
-
                     &:hover {
                         background-color: var(--color3);
                     }
@@ -536,7 +534,7 @@ nav{
         }
     }
 
-    .skills__languages {
+    &__languages {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -547,24 +545,21 @@ nav{
             gap: 20px;
 
             .skills__languages__card__item {
-                background-color: var(--color5); // Couleur de fond de la carte
-                border: 2px solid var(--color2); // Bordure élégante
-                border-radius: 10px; // Coins arrondis
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre subtile
+                background-color: var(--color5);
+                border: 2px solid var(--color2);
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 padding: 20px;
                 text-align: center;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
-
                 &:hover {
-                    transform: translateY(-5px); // Effet de survol léger
-                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                    transform: translateY(-5px);
                 }
                 .langage-icon {
-                    max-width: 80px; // Taille de l'image
+                    max-width: 80px;
                     height: auto;
                     margin-bottom: 15px;
                 }
-
                 p {
                     color: var(--color1);
                     font-weight: bold;
@@ -574,18 +569,108 @@ nav{
     }
 }
 
+.soft-skill__hobbies {
+    display: flex;
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+
+    .homme {
+        display: flex;
+        justify-content: center;
+        width:20vw;
+    }
+   .homme-icon
+{
+    width:100%;
+    height: 100%;
+}
+
+    .soft__skills, .hobbies {
+        flex: 1;
+        text-align: center;
+       
+
+        .skills_title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--color2);
+            position: relative;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 20px; // Largeur de la bulle
+                height: 20px; // Hauteur de la bulle
+                background-color: var(--color2); // Couleur de la bulle
+                border-radius: 50%; // Rend la bulle ronde
+                transform: translate(-50%, -50%);
+            }
+
+            &::before {
+                left: -30px; // Position de la première bulle
+            }
+
+            &::after {
+                left: calc(100% + 10px); // Position de la seconde bulle
+            }
+        }
+
+        .soft__skills__card, .hobbies__card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); // 3 colonnes
+            gap: 15px;
+
+            .soft__skills__card__item, .hobbies__card__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: var(--color5);
+
+                .soft__skills-icon, .hobbies-icon {
+                    width: 80px;
+                    height: 80px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: var(--color1);
+                }
+            }
+        }
+    }
+}
+
+
+
 @media (max-width: 768px) {
     .skills__languages .skills__languages__card {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
+
+
+
 .portfolio {
+  
+    min-height: calc(100vh - 20vh);
     padding: 20px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  
+
     .search-bar {
+        width: 50%;    
         margin-bottom: 20px;
 
         input {
@@ -604,7 +689,6 @@ align-items: center;
 
     .language-buttons {
         display: flex;
-       
         flex-wrap: wrap;
         margin-bottom: 20px;
 
@@ -631,27 +715,30 @@ align-items: center;
     }
 
     .project-cards {
+
         display: grid;
-        width :80%;
-        grid-template-columns: repeat(12, 1fr);
+        
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 20px;
 
         .project-card {
-            width:80%;
-            grid-column: span 4;
-            background-color: var(--color5);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-
-            &:hover {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; // Organise le contenu de manière à répartir l'espace
+                background-color: var(--color5);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+        
+                &:hover {
                 transform: translateY(-5px);
             }
 
             img {
                 width: 100%;
-                height: auto;
+                height: 15vh;
                 border-radius: 5px;
                 margin-bottom: 15px;
             }
@@ -667,17 +754,29 @@ align-items: center;
                 margin-bottom: 15px;
             }
 
-            a {
-                color: var(--color2);
+            .github-link {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                margin-top: 15px;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: var(--color2);
+                color: white;
                 text-decoration: none;
-                font-weight: bold;
-
+                transition: background-color 0.3s, transform 0.3s;
+                -webkit-transition: background-color 0.3s, transform 0.3s;
+                -moz-transition: background-color 0.3s, transform 0.3s;
+                -ms-transition: background-color 0.3s, transform 0.3s;
+                -o-transition: background-color 0.3s, transform 0.3s;
+                
                 &:hover {
-                    color: var(--color3);
+                    background-color: var(--color3);
+                    transform: translateY(-2px);
                 }
 
-                .fa-brands {
-                    margin-right: 5px;
+                i {
+                    margin-right: 8px;
                 }
             }
         }

@@ -1,5 +1,5 @@
 import '../../style/style.scss';
-import { getCategories, getLanguage } from '../../data/data';
+import { getCategories, getLanguage, getHobbies, getSoftSkills } from '../../data/data';
 import { useState, useEffect } from 'react';
 
 
@@ -63,7 +63,35 @@ export default function Skills() {
                     ))}
                 </div>
             </div>
-        </div>
+            <div className="soft-skill__hobbies">
+            <div className="soft__skills">
+                <h1 className='skills_title'>Soft skills</h1>
+                <div className="soft__skills__card">
+                    {getSoftSkills().map((softskill) => (
+                        <div className="soft__skills__card__item" key={softskill.id}>
+                            <img className="soft__skills-icon" src={'../' + softskill.url} alt={softskill.name} />
+                            <p>{softskill.name}</p>
+                        </div>
+                    ))}
+                </div>
+               
 
+            </div>
+            <div className="homme">
+                    <img className="homme-icon" src={'../homme.png'} alt="homme" />
+                </div>
+            <div className="hobbies">
+                <h1 className='skills_title'>Hobbies</h1>
+                <div className="hobbies__card">
+                    {getHobbies().map((hobby) => (
+                        <div className="hobbies__card__item" key={hobby.id}>
+                            <img className="hobbies-icon" src={'../' + hobby.url} alt={hobby.name} />
+                            <p>{hobby.name}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+        </div>
     );
 }
