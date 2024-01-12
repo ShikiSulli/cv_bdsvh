@@ -162,6 +162,14 @@ export default function Home() {
             cardSubtitleColor: '#B1E1E9',
             titleColorActive: '#F2E4F9',
         }} 
+        classNames={{
+            card: 'timeline__card',
+            title: 'timeline__title',
+            cardTitle: 'timeline__cardTitle',
+            cardSubtitle: 'timeline__cardSubtitle',
+            cardDetailedText: 'timeline__cardDetailedText',
+            body: 'timeline__body',
+        }}
         fontSizes={{
             title: '1.8rem',
             cardTitle: '1.5rem',

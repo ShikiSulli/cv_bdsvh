@@ -21,10 +21,21 @@
         background-position: 0% 50%;
     }
 }
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 header {
     height: auto;
     background-color: var(--color1);
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 .navbar {
@@ -59,6 +70,8 @@ header {
     background-color: var(--color4);
     font-size: 2rem;
     cursor: pointer;
+    animation: shake 0.5s ease-in-out;
+   
     
 }
 
@@ -66,16 +79,28 @@ header {
     position: relative;
     padding: 0.5rem 1rem;
     font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    
     
     a {
         
         position: relative;
         color: var(--color5);
         text-decoration: none;
+       
 
         &:hover {
+          
             cursor: pointer;
-        }
+            color: var(--color3);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+            -webkit-transition: color 0.3s ease;
+            -moz-transition: color 0.3s ease;
+            -ms-transition: color 0.3s ease;
+            -o-transition: color 0.3s ease;
+           
+}
 
         &::before {
             content: "";
@@ -168,6 +193,7 @@ header {
         }
 
         .hero__info {
+            font-family: 'Playfair Display', serif;
             flex: 2;
             padding: 20px;
             text-align: left;
@@ -189,6 +215,7 @@ header {
             }
 
             .hero__info--text {
+                font-family: 'Schibsted Grotesk', sans-serif;
                 font-size: 1.5rem;
                 line-height: 1.5;
                 margin-bottom: 20px;
@@ -198,6 +225,7 @@ header {
                 justify-content: center;
                 align-items: center;
                 p {
+                    font-family: 'Schibsted Grotesk', sans-serif;
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
@@ -226,6 +254,7 @@ header {
 
 
 .about {
+    font-family: 'Playfair Display', serif;
     display: flex;
     background-color: #f5f5f5;
     gap:2rem;
@@ -247,7 +276,7 @@ header {
     }
 
     .about__text {
-       
+        font-family: 'Schibsted Grotesk', sans-serif;
         width: 70%;
         font-size: 1.2rem;
         font-weight: 500;
@@ -413,6 +442,18 @@ header {
     }
 
 }
+.timeline__cardTitle
+    {
+        font-family: 'Playfair Display', serif;
+    }
+    .timeline__cardSubtitle
+    {
+        font-family: 'Schibsted Grotesk', sans-serif;
+    }
+    .timeline__cardDetailedText
+    {
+        font-family: 'Schibsted Grotesk', sans-serif;
+    }
 
 .footer
 {
@@ -716,16 +757,41 @@ header {
             }
         }
     }
-}
-
-
-
-@media (max-width: 768px) {
-    .skills__languages .skills__languages__card {
-        grid-template-columns: repeat(2, 1fr);
+    @media screen and (max-width: 768px) {
+        .soft-skill__hobbies {
+            flex-direction: column; // Empile les éléments verticalement pour les tablettes
+            gap: 1rem;
+            .homme {
+                width: 50vw; // Ajustez la largeur pour les tablettes
+            }
+    
+            .soft__skills, .hobbies {
+                .soft__skills__card, .hobbies__card {
+                    grid-template-columns: repeat(3, 1fr); 
+                }
+            }
+        }
+    
+        .skills {
+            .skills__categories__list {
+                flex-direction: column; // Empile les catégories verticalement
+            }
+        }
     }
+    
+    @media screen and (max-width: 480px) {
+        .soft-skill__hobbies {
 
+
+            .homme, .soft__skills, .hobbies {
+                width: 100%; // Ajuste la largeur pour s'adapter à la colonne
+            }
+        }
 }
+}
+
+
+
 
 
 
