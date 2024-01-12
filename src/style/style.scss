@@ -587,10 +587,18 @@ header {
     padding: 20px;
     height: auto;
     .skills_title{
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--color1);
-        margin-bottom: 20px;
+        border: 2px solid var(--color2);
+            background-color: var(--color6);
+            border-radius: 10px;
+            padding: 1rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--color2);
+            position: relative;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
     }
 
     &__categories {
@@ -679,20 +687,7 @@ header {
         text-align: center;
        
 
-        .skills_title {
-            border: 2px solid var(--color2);
-            background-color: var(--color6);
-            border-radius: 10px;
-            padding: 1rem;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--color2);
-            position: relative;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -ms-border-radius: 10px;
-            -o-border-radius: 10px;
-}
+       
 
         .soft__skills__card, .hobbies__card {
             display: grid;
@@ -855,6 +850,36 @@ header {
                     margin-right: 8px;
                 }
             }
+        }
+    }
+    // Styles pour tablettes et smartphones
+    @media screen and (max-width: 768px) {
+        .search-bar {
+            width: 70%; // Ajustez la largeur pour les tablettes
+        }
+
+        .language-buttons button {
+            padding: 5px 10px; // Ajustez la taille des boutons pour les tablettes
+            font-size: 0.9em; // Réduisez la taille du texte
+        }
+
+        .project-cards {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Ajustez la taille des cartes
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .search-bar {
+            width: 90%; // Ajustez la largeur pour les smartphones
+        }
+
+        .language-buttons button {
+            padding: 5px; // Ajustez la taille des boutons pour les smartphones
+            font-size: 0.8em; // Réduisez encore plus la taille du texte
+        }
+
+        .project-cards {
+            grid-template-columns: 1fr; // Une seule colonne pour les smartphones
         }
     }
 }

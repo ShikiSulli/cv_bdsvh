@@ -7,6 +7,9 @@ export default function Portfolio() {
     const [selectedLanguage, setSelectedLanguage] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredProjects, setFilteredProjects] = useState([]);
+    const hasProjects = (languageId) => {
+        return projects.some(project => project.languagesId.includes(languageId));
+    };
 
     // Récupérer les langages et les projets
     const languages = getLanguage();
@@ -22,7 +25,7 @@ export default function Portfolio() {
 
         // Filtrer par terme de recherche
         if (searchTerm) {
-            filtered = filtered.filter(project => 
+            filtered = filtered.filter(project =>
                 project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 languages.filter(lang => project.languagesId.includes(lang.id) && lang.name.toLowerCase().includes(searchTerm.toLowerCase())).length > 0
             );
@@ -34,21 +37,27 @@ export default function Portfolio() {
     return (
         <div className="portfolio">
             <div className='portfolio__head'>
-            <div className="search-bar">
-                <input 
-                    type="text" 
-                    placeholder="Rechercher par nom ou langage..." 
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-            </div>
-            <div className="language-buttons">
-                <button onClick={() => setSelectedLanguage(null)}>Tous</button>
-                {languages.map(language => (
-                    <button key={language.id} onClick={() => setSelectedLanguage(language.id)}>
-                        {language.name}
-                    </button>
-                ))}
-            </div>
+                <div className="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Rechercher par nom ou langage..."
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+                <div className="language-buttons">
+                    <button onClick={() => setSelectedLanguage(null)}>Tous</button>
+                    {languages.map(language => {
+                        if (hasProjects(language.id)) {
+                            return (
+                                <button key={language.id} onClick={() => setSelectedLanguage(language.id)}>
+                                    {language.name}
+                                </button>
+                            );
+                        }
+                        // on retourne null pour ne pas afficher de bouton
+                        return null;
+                    })}
+                </div>
             </div>
             <div className="project-cards">
                 {filteredProjects.map(project => (

@@ -16,7 +16,8 @@ export default function Header() {
 
 <nav className="navbar">
         <div className="navbar__logo">
-          <img className='Logo' src={Logo} alt="logo" />
+          <NavLink to='/'><img className='Logo' src={Logo} alt="logo" /></NavLink>
+          
         </div>
         <button className="navbar__toggle" id="navbar-toggle" onClick={toggleMenu}>
           <span className="burger">&#9776;</span>
