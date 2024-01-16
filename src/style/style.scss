@@ -50,8 +50,26 @@
         transform: translateX(0);
     }
 }
-
-  
+@keyframes rgbboxshadow {
+    0% {
+        box-shadow: 0 4px 8px  var(--color1,0.4);
+    }
+    20% {
+        box-shadow: 0 4px 8px  var(--color2,0.4);
+    }
+    40% {
+        box-shadow: 0 4px 8px  var(--color3,0.4);
+    }
+    60% {
+        box-shadow: 0 4px 8px  var(--color4,0.4);
+    }
+    80%{
+        box-shadow: 0 4px 8px  var(--color5,0.4);
+    }
+    100% {
+        box-shadow: 0 4px 8px  var(--color7, 0.4);
+    }
+}
 header {
     height: auto;
     background-image: url(../Images/banniere.webp);
@@ -214,16 +232,21 @@ header {
 
        
     &__content {
-        background-color: #f5f5f5; // Choisir une couleur de fond appropriée
+        background-color: #f5f5f5;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: 1200px; // Ajustez selon votre design
+        max-width: 1200px;
         width: 100%;
         border: 2px solid var(--color1);
-        box-shadow: 0px 0px 10px var(--color2);
+        animation: rgbboxshadow 15s infinite;
+        -webkit-animation: rgbboxshadow 15s infinite;
         border-radius: 15px;
-    }
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+}
     &__img {
         flex: 1;
         padding: 20px;
@@ -763,6 +786,71 @@ header {
     padding: 20px;
     height: auto;
 
+    &__exp {
+        color: var(--color1);
+        font-family: 'Playfair Display', serif;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        h2 {
+           
+            border: 2px solid var(--color2);
+            background-color: var(--color4);
+            box-shadow: 0px 4px 8px var(--color7);
+            border-radius: 10px;
+            padding: 1rem;
+            width: auto;
+            color: var(--color7);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+    
+        p {
+            font-size: 1rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1.5rem;
+
+        &__card {
+            background-color: var(--color6);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%; 
+            text-align: center;
+
+            h3 {
+              
+                color: var(--color1);
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+                font-weight: 600;
+               
+
+            }
+
+            img {
+                width: auto;
+                height: 5rem;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                text-align: center;
+                color: var(--color1);
+            }
+        }
+    }
+}
     .selected-category--text {
         text-align: center;
         font-family: 'Playfair Display', serif;
@@ -775,11 +863,12 @@ header {
     &__title{
         border: 2px solid var(--color2);
             background-color: var(--color4);
+            box-shadow: 0px 4px 8px var(--color7);
             border-radius: 10px;
             padding: 1rem;
             font-size: 2rem;
             margin-bottom: 20px;
-            color: var(--color1);
+            color: var(--color7);
             position: relative;
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
@@ -937,6 +1026,21 @@ header {
 &__head{
 justify-content: center;
 align-items: center;
+text-align: center;
+    &--title {
+        font-family: 'Playfair Display', serif;
+        border: 2px solid var(--color2);
+            background-color: var(--color4);
+            box-shadow: 0px 4px 8px var(--color7);
+            border-radius: 10px;
+            padding: 1rem;
+            width: auto;
+            color: var(--color7);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 800;
+            font-size: 2rem;
+    }
 
     .search-bar {
            
@@ -1069,6 +1173,10 @@ align-items: center;
             }
         }
     }
+
+   
+    
+        
     // Styles pour tablettes et smartphones
     @media screen and (max-width: 768px) {
         .search-bar {

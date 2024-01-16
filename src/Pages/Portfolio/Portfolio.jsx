@@ -1,7 +1,6 @@
 import '../../style/style.scss';
 import { useState, useEffect } from 'react';
 import { getLanguage, getProjects } from '../../data/data';
-import { Link } from 'react-router-dom';
 
 export default function Portfolio() {
     //SelectedLanguage est en null par défaut et setSelectedLanguage permet de modifier la valeur de l'état
@@ -46,6 +45,7 @@ export default function Portfolio() {
     return (
         <div className="portfolio">
             <div className='portfolio__head'>
+                <h2 className='portfolio__head--title'>PORTFOLIO</h2>
                 <div className="search-bar">
              
                     <input
@@ -72,6 +72,7 @@ export default function Portfolio() {
                     })}
                 </div>
             </div>
+            
             <div className="project-cards">
                 {/* filteredprojects.map permet de parcourir le tableau des projets filtrés */}
                 {filteredProjects.map(project => (

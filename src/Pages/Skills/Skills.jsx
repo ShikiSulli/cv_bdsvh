@@ -1,6 +1,9 @@
 import '../../style/style.scss';
 import { getCategories, getLanguage, getHobbies, getSoftSkills } from '../../data/data';
 import { useState, useEffect } from 'react';
+import prepavenir from '../../Images/prepavenir.png';
+import Akira from '../../Images/Akira.jpg';
+
 
 
 
@@ -36,6 +39,22 @@ export default function Skills() {
 
     return (
         <div className="skills">
+             <div className="skills__exp">
+                <h2>Expériences</h2>
+            <p>Durant mon parcours au sein du développement web, je me suis familiarisé avec plusieurs langages de programmation.</p>
+                <div className="skills__exp__content">
+                    <div className="skills__exp__content__card">
+                        <h3>Juillet 2023-Avril 2024</h3>
+                        <img src={prepavenir} alt="Prepavenir Formation" />
+                        <p>Formation Concepteur Développeur Application</p>
+                    </div>
+                    <div className="skills__exp__content__card">
+                        <h3>Janvier 2024-Avril 2024</h3>
+                        <img src={Akira} alt="Akira" />
+                        <p>Stage chez Akira : services de création de site web / système de gestion en SaaS et des prestations en développement informatique.</p>
+                    </div>
+                </div>
+            </div>
             <h1 className='skills__title'>Voici mes langages de programmations</h1>
             {/*liste de toutes les catégorie */}
             <div className="skills__categories">
@@ -63,6 +82,7 @@ export default function Skills() {
                     ))}
                 </ul>
             </div>
+           
             {/*liste de tous les languages */}
             <div className="skills__languages">
                 <div className="skills__languages__card">
