@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
+//toggleMenu permet de modifier la valeur de l'état isMenuOpen
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -21,10 +21,10 @@ export default function Header() {
         <div className="navbar__logo">
           <NavLink to='/'><img className='Logo' src={Logo} alt="logo" /></NavLink>
         </div>
-     
         <button className="navbar__toggle" id="navbar-toggle" onClick={toggleMenu}>
           <span className="burger">&#9776;</span>
         </button>
+        {/* //isMenuOpen ? 'active' : '' permet de savoir si le menu est ouvert ou fermé */}
         <ul id="navbar-container" className={`navbar__container ${isMenuOpen ? 'active' : ''}`}>
           <li className="navbar__item navbar__item--active">
            <NavLink to='/'><i class="fa-solid fa-house-user"></i> Home</NavLink>

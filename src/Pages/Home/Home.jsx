@@ -2,7 +2,7 @@ import "../../style/style.scss";
 import profil from "../../Images/photo_profil.jpg";
 import { Chrono } from "react-chrono";
 import cv from "../../data/Cv_Ben.pdf";
-import { NavLink } from "react-router-dom";
+
 
 export default function Home() {
 
