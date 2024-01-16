@@ -1,8 +1,11 @@
 import "../../style/style.scss";
 import profil from "../../Images/photo_profil.jpg";
 import { Chrono } from "react-chrono";
+import cv from "../../data/Cv_Ben.pdf";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
+
     
   const items = [
     {
@@ -78,7 +81,7 @@ export default function Home() {
             </p>
             <div className="hero__info__contact">
               <p>
-                {" "}
+                
                 <i class="fa-regular fa-calendar"></i> 12 Septembre 1994
               </p>
               <p>
@@ -89,6 +92,12 @@ export default function Home() {
               </p>
               <p>
                 <i class="fa-solid fa-location-dot"></i> Montmorency , 95160
+              </p>
+              <p>
+              <a  classNam="cv" href={cv} download>
+              <i class="fa-regular fa-file"></i>
+                Télécharger mon CV en PDF
+              </a>
               </p>
             </div>
           </div>
@@ -104,7 +113,8 @@ export default function Home() {
             <p className="about__text">
               Je suis un développeur web junior basé à Paris, France. J'ai une
               passion pour la conception de sites Web et la création de beaux
-              interfaces. J'aime aussi le design, la musique et les jeux vidéo.
+              interfaces. J'aime aussi le design, la musique et les jeux vidéo.<br/>
+              <a className="about__text--link" href="/competences"> En savoir plus sur mes compétences ? clique ici</a>
             </p>
           </div>
           <div className="about__content--project">
@@ -150,7 +160,7 @@ export default function Home() {
       </div>
       <div className="timeline">
         <div className="timeline__content--title">
-          <h2 className="timeline__title">Mon parcours</h2>
+          <h2 className="timeline__title">Mon parcours  <i class="fa-solid fa-person-running"></i></h2>
           </div>
         <Chrono items={items} 
         theme={{

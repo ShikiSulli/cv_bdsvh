@@ -45,6 +45,7 @@ export default function Skills() {
                                 setSelectedCategory(category.id);
                                 setSelectedCategoryName(category.name);
                             }}>
+                                <img className='category-icon' src={'../Icons/' +category.url} alt= {category.name} />
                                 {category.name}
                             </button>
                         </li>

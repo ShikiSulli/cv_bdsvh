@@ -2,11 +2,11 @@
 
 export  function getCategories(){
     const categories = [
-        { id: 1, name: 'Front-end' },
-        { id: 2, name: 'Back-end' },
-        { id: 3, name: 'UI/UX' },
-        { id: 5, name: 'Database' },
-        { id: 7, name: 'CMS'}
+        { id: 1, name: 'Front-end',url:'front-end.png' },
+        { id: 2, name: 'Back-end',url:'back-end.png' },
+        { id: 3, name: 'UI/UX',url:'ux.png' },
+        { id: 5, name: 'Database',url:'database.png' },
+        { id: 7, name: 'CMS',url:'cms.png'}
 
     ];
     return categories;
@@ -34,10 +34,10 @@ export  function getLanguage(){
 export function getProjects(){
     const projects = [
         {id :1, name : 'Morgoth Code Forge', url :'wordpress.png', languagesId : [13], desc:'Site vitrine Wordpress avec une charté graphique sur mesure',github : '#'},
-        {id :2, name : 'Pokedex_api', url :'pokedex_api.png', languagesId : [5], desc:'Site Web qui permet de rechercher des pokemons et d\'afficher leurs caractéristiques',github : 'https://github.com/ShikiSulli/pokedex'},
-        {id :3, name : 'site Vitrine en Html/Css', url : 'htmlTP.png', languagesId : [1,2], desc:'Site vitrine en Html/Css',github : 'https://github.com/ShikiSulli/site_vitrine'},
+        {id :2, name : 'Pokedex_api', url :'pokedex_api.png', languagesId : [5], desc:'Requête Api /Site Web qui permet de rechercher des pokemons et d\'afficher leurs caractéristiques',github : 'https://github.com/ShikiSulli/pokedex'},
+        {id :3, name : 'Site Vitrine en Html/Css', url : 'htmlTP.png', languagesId : [1,2], desc:'Site vitrine en Html/Css',github : 'https://github.com/ShikiSulli/site_vitrine'},
         {id :4, name : 'Blogxpress', url : 'blogxpress.png', languagesId : [7,11,12], desc:'Blog avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/blogxpress'},
-        {id :5, name : 'Cities-api', url :'Cities-api.png', languagesId : [11,7], desc:'création d\'une base de données Mysql en PHP qui permet de rechercher des villes',github : 'https://github.com/ShikiSulli/Cities-api'},
+        {id :5, name : 'Cities-api', url :'Cities-api.png', languagesId : [11,7], desc:'création d\'une base de données/API Mysql en PHP qui permet de rechercher des villes',github : 'https://github.com/ShikiSulli/Cities-api'},
         {id :6, name : 'Codeexpress', url :'codexpress.png', languagesId : [11,12,7], desc:'Site qui permet d\'archiver des bouts de code avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/codexpress'},
         {id :7, name : 'Biblioapp', url :'Biblioapp.png', languagesId : [11,12,7], desc:'Site gestionnaire de bibliothèque avec un back-end en Symfony/PHP, base de donnée MySQL et un front-end en Html/Twig/Css',github : 'https://github.com/ShikiSulli/biblioapp'},
         {id :8, name : 'Company-api', url :'company-api-sqli.png', languagesId : [11,7], desc:'création d\' une base de données en Sqli qui permet de rechercher des entreprises',github : 'https://github.com/ShikiSulli/company-api'},
@@ -80,3 +80,13 @@ export function getSoftSkills() {
     ];
     return softSkills;
 }
+
+export function RegexEmail(email){
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return regex.test(email);
+}
+
+export function RegexName(name){
+    const regex = /^[a-zA-ZÀ-ÿ]{2,20}$/;
+    return regex.test(name);
+}   

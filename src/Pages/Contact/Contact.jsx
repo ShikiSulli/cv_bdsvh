@@ -1,8 +1,69 @@
 import '../../style/style.scss';
 import coder from '../../Images/coder.png';
 import meeting from '../../Images/meeting.png';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
+import { RegexName, RegexEmail } from '../../data/data';
 
 export default function Contact() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [errors, setErrors] = useState({ name:'', email:''});
+
+
+    
+    const handleName = (e) => {
+        const nameValue =e.target.value;
+        if (RegexName(nameValue)) {
+         setName(nameValue);
+         setErrors({...errors, name:''});
+    }else{
+        setErrors({...errors, name:'Invalid name format'});
+    }
+    };
+
+    const handleEmail = (e) => {
+        const emailValue = e.target.value;
+        if (RegexEmail(emailValue)) {
+            setEmail(emailValue);
+            setErrors({ ...errors, email: '' });
+        } else {
+            setErrors({ ...errors, email: 'Invalid email format' });
+        }
+    };
+
+    const handleMessage = (e) => {
+        setMessage(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            name: name,
+            email: email,
+            message: message
+        };
+
+        //verifier les champs avec les regex et si ils sont faut afficher une alerte au submit
+        if (RegexName(data.name) && RegexEmail(data.email)) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Votre message a bien été envoyé',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Veuillez remplir les champs correctement',
+            });
+        }
+     
+    };
+
     return (
         <div className="contact">
             <div className="contact__location">
@@ -19,30 +80,33 @@ export default function Contact() {
             </div>
 
             {/*formulaire de contact*/}
-            <form className="contact__form">
+            <div className="contact__form">
+            <form className="contact__form--content">
                
               <h2 className='contact__form--title'>Une Demande particulière ?</h2>
                 <div className="contact__form--name">
                     <label htmlFor="name">Nom</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom" />
+                    <input type="text" id="name" name="name" placeholder="Votre nom" onChange={handleName} />
+                    <span className='error'>{errors.name}</span>
                 </div>
                 <div className="contact__form--email">
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" />
+                    <input type="email" id="email" name="email" placeholder="Votre email" onChange={handleEmail}/>
+                    <span className='error'>{errors.email}</span>
                 </div>
                 <div className="contact__form--message">
                     <label htmlFor="message">Message</label>
                     <textarea id="message" name="message" placeholder="Votre message"></textarea>
                 </div>
                 <div className="contact__form--button">
-                    <button type="submit">Envoyer</button>
+                    <button type="submit" onClick={handleSubmit}>Envoyer</button>
                 </div>
                <div className='meeting'>
                 <img className='meeting--img' src={meeting} alt={meeting} />
                 </div>
               
             </form>
-            
+            </div>
         </div>
     );
     }

@@ -38,6 +38,7 @@ export default function Portfolio() {
         <div className="portfolio">
             <div className='portfolio__head'>
                 <div className="search-bar">
+             
                     <input
                         type="text"
                         placeholder="Rechercher par nom ou langage..."
@@ -50,6 +51,7 @@ export default function Portfolio() {
                         if (hasProjects(language.id)) {
                             return (
                                 <button key={language.id} onClick={() => setSelectedLanguage(language.id)}>
+                                    <img src={'../Icons/' + language.url} className='button-icon' alt={language.name} />
                                     {language.name}
                                 </button>
                             );
