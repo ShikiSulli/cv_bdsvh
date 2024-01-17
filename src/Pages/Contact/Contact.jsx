@@ -6,7 +6,30 @@ import Swal from 'sweetalert2';
 import { RegexName, RegexEmail } from '../../data/data';
 
 export default function Contact() {
+    // function sendEmail(email, message) {
+    //     const templateId = 'template_xxxxxxx'; /* EmailJS.com -> Email Templates / My default Template / Template ID  */
+    //     const serviceId = 'service_yyyyyyy'; /* EmailJS.com -> Email Services / GMAIL / Service ID  */
+    //     const publicKey = '_yvdWM1iF7BpuqHkY'; /* EmailJS.com -> Account / public Key  */
 
+    //     const templateParams = {
+    //         from_name: 'Appli Portfolio', /* Application source de cet envoi de mails  */
+    //         from_email: email, /* Adresse email de l'expéditeur (saisie dans le formulaire) */
+    //         to_name: 'xxxxxxx.yyyyyyy@gmail.com', /* Adresse du destinataire: votre adresse email gmail, outlook etc ... */
+    //         message: message, /* Message écrit par l'expéditeur  */
+    //     };
+    //     emailjs.send(serviceId, templateId, templateParams, publicKey) /* Envoi du message à m'aide des IDs et des paramètres  */
+    //         .then((response) => {
+    //             setMsgAlert(true); /* Définit msgAlert à true pour affichage "Message bien envoyé !"  */
+    //             setTimeout(() => { /* Définit msgAlert à false pour ne plus afficher le message d'envoi au bout de 5 secondes  */ 
+    //                 setMsgAlert(false);
+    //             }, 5000);
+    //             console.log('SUCCESS!', response.status, response.text); /* Message dans la console pour vérifier le "send OK : 200"  */
+    //         }, (err) => {
+    //             console.log('FAILED...', err); /* Message dans la console pour vérifier l'erreur générée  */
+    //         });
+    // }
+    
+    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -74,8 +97,16 @@ export default function Contact() {
                     <p>Adresse : ** Rue de Verdun</p>
                     <p>Code postal : 95160</p>
                     <p>Ville : Montmorency</p>
-                    <p>Téléphone : +33 6 23 96 74 09</p>
+                    <p>Téléphone : +33 6 23 96 ** **</p>
                     <p>Email : bandasavanh.b@gmail.com</p>
+                    <div className="contact__location--social">
+                        <a href="https://www.linkedin.com/in/bdsvhb"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#">  <i class="fa-brands fa-github"></i></a>
+                    </div>
+                   
             </div>
             </div>
 
