@@ -46,19 +46,25 @@ const handleEmail = (e) => {
             message: message
         };
 
-        //verifier les champs avec les regex et si ils sont faut afficher une alerte au submit
-        if (RegexName(data.name) && RegexEmail(data.email)) {
+        //verifier les champs avec les regex et si ils sont faux afficher une alerte au submit
+        if (data.name.trim() === '' || data.email.trim() === '' || data.message.trim() === '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Veuillez remplir tous les champs',
+            });
+        } else if (!RegexName(data.name) || !RegexEmail(data.email)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Veuillez remplir les champs correctement',
+            });
+        } else {
             Swal.fire({
                 icon: 'success',
                 title: 'Votre message a bien été envoyé',
                 showConfirmButton: false,
                 timer: 1500
-            });
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Veuillez remplir les champs correctement',
             });
         }
      
