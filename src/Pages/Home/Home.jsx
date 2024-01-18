@@ -112,7 +112,7 @@ export default function Home() {
           <div className="about__content--text">
             <p className="about__text">
               Je suis un développeur web junior basé à Paris, France. J'ai une
-              passion pour la conception de sites Web et la création de beaux
+              passion pour la conception de sites Web et la création de belles
               interfaces. J'aime aussi le design, la musique et les jeux vidéo.<br/>
               <a className="about__text--link" href="/competences"> En savoir plus sur mes compétences ? clique ici</a>
             </p>
