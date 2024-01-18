@@ -9,6 +9,7 @@ export default function Portfolio() {
     const [searchTerm, setSearchTerm] = useState('');
     //filteredProjects est un tableau vide par défaut et setFilteredProjects permet de modifier la valeur de l'état
     const [filteredProjects, setFilteredProjects] = useState([]);
+
     const hasProjects = (languageId) => {
         return projects.some(project => project.languagesId.includes(languageId));
     };
@@ -47,7 +48,7 @@ export default function Portfolio() {
             <div className='portfolio__head'>
                 <h2 className='portfolio__head--title'>PORTFOLIO</h2>
                 <div className="search-bar">
-             
+
                     <input
                         type="text"
                         placeholder="Rechercher par nom ou langage..."
@@ -72,7 +73,7 @@ export default function Portfolio() {
                     })}
                 </div>
             </div>
-            
+
             <div className="project-cards">
                 {/* filteredprojects.map permet de parcourir le tableau des projets filtrés */}
                 {filteredProjects.map(project => (

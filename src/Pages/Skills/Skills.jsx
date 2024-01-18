@@ -20,10 +20,10 @@ export default function Skills() {
 
     useEffect(() => {
         if (selectedCategory === null) {
-              //si selectedCategory est null, on affiche tous les langages
+            //si selectedCategory est null, on affiche tous les langages
             setFilteredLanguages(getLanguage());
             setSelectedCategoryName('');
-          
+
         } else {
             //sinon on affiche les langages de la catégorie sélectionnée
             setFilteredLanguages(
@@ -39,9 +39,9 @@ export default function Skills() {
 
     return (
         <div className="skills">
-             <div className="skills__exp">
+            <div className="skills__exp">
                 <h2>Expériences</h2>
-            <p>Durant mon parcours au sein du développement web, je me suis familiarisé avec plusieurs langages de programmation.</p>
+                <p>Durant mon parcours au sein du développement web, je me suis familiarisé avec plusieurs langages de programmation.</p>
                 <div className="skills__exp__content">
                     <div className="skills__exp__content__card">
                         <h3>Juillet 2023-Avril 2024</h3>
@@ -75,14 +75,14 @@ export default function Skills() {
                                 setSelectedCategory(category.id);
                                 setSelectedCategoryName(category.name);
                             }}>
-                                <img className='category-icon' src={'../Icons/' +category.url} alt= {category.name} />
+                                <img className='category-icon' src={'../Icons/' + category.url} alt={category.name} />
                                 {category.name}
                             </button>
                         </li>
                     ))}
                 </ul>
             </div>
-           
+
             {/*liste de tous les languages */}
             <div className="skills__languages">
                 <div className="skills__languages__card">
@@ -97,36 +97,36 @@ export default function Skills() {
                 </div>
             </div>
             <div className="soft-skill__hobbies">
-            <div className="soft__skills">
-                <h1 className='skills__title'>Soft skills</h1>
-                <div className="soft__skills__card">
-                    {/* on parcourt le tableau des softskills */}
-                    {getSoftSkills().map((softskill) => (
-                        <div className="soft__skills__card__item" key={softskill.id}>
-                            <img className="soft__skills-icon" src={'../' + softskill.url} alt={softskill.name} />
-                            <p>{softskill.name}</p>
-                        </div>
-                    ))}
-                </div>
-               
+                <div className="soft__skills">
+                    <h1 className='skills__title'>Soft skills</h1>
+                    <div className="soft__skills__card">
+                        {/* on parcourt le tableau des softskills */}
+                        {getSoftSkills().map((softskill) => (
+                            <div className="soft__skills__card__item" key={softskill.id}>
+                                <img className="soft__skills-icon" src={'../' + softskill.url} alt={softskill.name} />
+                                <p>{softskill.name}</p>
+                            </div>
+                        ))}
+                    </div>
 
-            </div>
-            <div className="homme">
+
+                </div>
+                <div className="homme">
                     <img className="homme-icon" src={'../homme.png'} alt="homme" />
                 </div>
-            <div className="hobbies">
-                <h1 className='skills__title'>Hobbies</h1>
-                <div className="hobbies__card">
-                    {/* on parcourt le tableau des hobbies */}
-                    {getHobbies().map((hobby) => (
-                        <div className="hobbies__card__item" key={hobby.id}>
-                            <img className="hobbies-icon" src={'../' + hobby.url} alt={hobby.name} />
-                            <p>{hobby.name}</p>
-                        </div>
-                    ))}
+                <div className="hobbies">
+                    <h1 className='skills__title'>Hobbies</h1>
+                    <div className="hobbies__card">
+                        {/* on parcourt le tableau des hobbies */}
+                        {getHobbies().map((hobby) => (
+                            <div className="hobbies__card__item" key={hobby.id}>
+                                <img className="hobbies-icon" src={'../' + hobby.url} alt={hobby.name} />
+                                <p>{hobby.name}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 }
